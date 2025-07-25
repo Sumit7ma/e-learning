@@ -6,7 +6,8 @@ import InstructorRegister from "./pages/InstructorRegister";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-
+import InstructorAllCourses from './pages/InstructorAllCourses';
+import ManageCourses from './pages/ManageCourses';
 
 // Auth handling
 import RoleRedirector from "./routes/RoleRedirector";
@@ -47,6 +48,8 @@ export default function App() {
         <Route path="/student/settings" element={<Settings />} />
         
         <Route path="/instructor-dashboard" element={<ProtectedRoute><InstructorDashboard /></ProtectedRoute>} />
+             <Route path="/InstructorAllCourses" element={<InstructorAllCourses />} />
+      <Route path="/manage-courses" element={<ManageCourses />} />
       </Routes>
     </Router>
   );

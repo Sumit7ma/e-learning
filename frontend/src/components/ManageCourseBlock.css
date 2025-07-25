@@ -1,0 +1,163 @@
+/* === Main Card === */
+.course-block {
+  background: rgba(15, 23, 42, 0.85); /* Glass-like dark */
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(100, 116, 139, 0.15);
+  backdrop-filter: blur(10px);
+  animation: fadeInCard 0.4s ease-out;
+}
+
+.course-block:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(59, 130, 246, 0.2);
+}
+
+/* === Image === */
+.course-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+/* === Content === */
+.course-info {
+  padding: 1rem 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* === Meta Header === */
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.course-lang {
+  color: #fcd34d;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* === Title & Description === */
+.course-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #93c5fd;
+  line-height: 1.3;
+}
+
+.course-description {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  opacity: 0.9;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* === Author === */
+.course-author {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+/* === Action Buttons === */
+.manage-buttons {
+  display: flex;
+  justify-content: space-between; /* 👈 pushes buttons to opposite ends */
+  align-items: center;
+  margin-top: 0.8rem;
+  max-width: 100%;
+  padding: 0 1rem;  /* Optional: add padding inside card */
+}
+
+
+
+.edit-btn,
+.delete-btn {
+  width: 120px;                /* ✅ Same fixed width */
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+
+.edit-btn {
+  background-color: #3b82f6;
+  color: white;
+  box-shadow: 0 1px 8px rgba(59, 130, 246, 0.2);
+}
+
+.edit-btn:hover {
+  background-color: #2563eb;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+  box-shadow: 0 1px 8px rgba(239, 68, 68, 0.2);
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Optional: hide delete button when disabled */
+.delete-btn:disabled {
+  display: none;
+}
+
+/* === Animation === */
+@keyframes fadeInCard {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .course-title {
+    font-size: 1rem;
+  }
+
+  .course-description {
+    font-size: 0.85rem;
+  }
+
+  .course-lang,
+  .course-author {
+    font-size: 0.7rem;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
