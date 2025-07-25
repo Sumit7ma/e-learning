@@ -1,0 +1,142 @@
+/* === Sidebar Wrapper === */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(to bottom right, #0f172a, #0a0f1c);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* === Branding Title === */
+.sidebar-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  color: #3b82f6;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(59, 130, 246, 0.2);
+}
+
+/* === Nav Links === */
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin: 1rem 0;
+  animation: slideIn 0.4s ease-in-out;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.sidebar-nav a svg {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  color: #60a5fa;
+  background-color: #1e293b;
+  transform: translateX(5px);
+}
+
+.sidebar-nav a:hover svg {
+  transform: scale(1.1);
+  color: #93c5fd;
+}
+
+/* === User Info Box === */
+.sidebar-user {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #1e293b;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  background-color: #0f1c2e;
+  border-radius: 10px;
+}
+
+.sidebar-user .user-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  margin-bottom: 0.2rem;
+}
+
+.sidebar-user .user-email {
+  font-size: 0.8rem;
+  word-break: break-word;
+  color: #94a3b8;
+}
+
+/* === Main Content === */
+.dashboard-main {
+  flex: 1;
+  margin-left: 240px; /* Same as sidebar width */
+  padding: 2rem;
+  background-color: #0f172a;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* === Animations === */
+@keyframes slideIn {
+  from {
+    transform: translateX(-15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* === Responsive (Optional Collapse) === */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .sidebar-nav li {
+    margin: 0;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+    padding-top: 1rem;
+  }
+}
