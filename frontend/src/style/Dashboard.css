@@ -1,0 +1,103 @@
+/* ✅ Global Layout */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0b10;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ✅ Main Layout Container */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0a0b10;
+  overflow-x: hidden;
+}
+
+/* ✅ Sidebar */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #121622;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ✅ Main Dashboard Area */
+.dashboard-main {
+  margin-left: 220px; /* same as sidebar width */
+  padding: 20px 30px;
+  width: calc(100% - 220px);
+  background-color: #0a0b10;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ✅ Topbar */
+.topbar {
+  background-color: #1c1f2e;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ✅ Search Bar (inside Topbar) */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  background-color: #2a2e3a;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 4px;
+  min-width: 250px;
+}
+
+.search-bar input::placeholder {
+  color: #ccc;
+}
+
+.search-bar .btn {
+  border: 1px solid #444;
+  color: white;
+}
+
+/* ✅ Course Cards Grid */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 20px;
+}
+
+/* ✅ Responsive Improvements */
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sidebar {
+    display: none; /* You can later implement toggle sidebar if needed */
+  }
+
+  .search-bar input {
+    min-width: 180px;
+  }
+}
